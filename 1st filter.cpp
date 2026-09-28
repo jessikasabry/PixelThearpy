@@ -21,9 +21,9 @@ Image image;
  }
 int main() {
      string ImageName;
-     //cout<<"PLEASE ENTER YOUR IMAGE NAME";
-     //cin>>ImageName;
-     if(image.loadNewImage("paris.jpeg"))
+    cout<<"PLEASE ENTER YOUR IMAGE NAME";
+    cin>>ImageName;
+     if(image.loadNewImage(ImageName))
      cout<<"Image successfully uplosded";
 
      BlackAndWhite(image);
