@@ -49,9 +49,9 @@ void rotate(Image &image,int angle){
 
 int main(){
     string imagename;
-    //cout<<"Enter Your Image Name";
-   // cin>>imagename;
-    if(!image.loadNewImage("night3.jpg")){
+    cout<<"Enter Your Image Name";
+    cin>>imagename;
+    if(!image.loadNewImage(imagename)){
         cout<<"uploaded Successfully";
     }
     cout<<"Choose Rotation Angle:\n";
