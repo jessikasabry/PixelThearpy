@@ -4,6 +4,54 @@ using namespace std;
 Image image;
 string ImageName;
 
+void flip_right_to_left (Image &photo) {
+    for(int j=0; j< photo.height; ++j){
+
+        int left=0, right= (photo.width)-1;
+
+        while(left<right){
+             for(int k=0; k<3; k++){
+
+                unsigned temp=photo(left ,j,k );
+
+                photo(left,j,k)=photo(right,j,k);
+
+                photo(right,j,k)=temp;
+
+             }
+
+             ++left; --right;
+        }
+    }
+}
+
+
+
+void flip_top_to_bottom (Image &photo) {
+    for(int i=0; i< photo.width; ++i){
+
+        int top=0, bottom= (photo.height)-1;
+
+        while(top<bottom){
+             for(int k=0; k<3; k++){
+
+                unsigned temp=photo(i ,top,k );
+
+                photo(i,top,k)=photo(i,bottom,k);
+
+                photo(i,bottom,k)=temp;
+
+             }
+
+             ++top; --bottom;
+        }
+    }
+}
+
+
+
+
+
 void BlackAndWhite(Image &image){
     for(int y=0;y<image.height;y++){
         for(int x=0;x<image.width;x++){
