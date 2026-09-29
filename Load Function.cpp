@@ -4,6 +4,16 @@ using namespace std;
 Image image;
 string ImageName;
 
+
+void invertImage(Image& image){
+    for (int i = 0; i < image.width; i++) {
+        for (int j = 0; j < image.height; j++) {
+            for (int c = 0; c < 3; c++) {
+                image.getPixel(i, j, c) = 255 - image.getPixel(i, j, c);
+            }
+        }
+    }
+}
 void turn_to_gray(Image &image ) {
     for(int i=0;i < image.width;++i){
         for(int j=0;j< image.height;++j){
