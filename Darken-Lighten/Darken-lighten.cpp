@@ -4,35 +4,41 @@
 
 using namespace std;
 
-void darkenImage(Image& image, int level) {
+void Darken_Lighten(Image& image, int level) {
+    int choice;
+
+    cout << "Do you want to: \n";
+    cout << "1. Darken image\n";
+    cout << "2. Lighten image\n";
+    cin >> choice;
+
+    while (choice != 1 && choice != 2) {
+        cout << "Invalid choice. Please enter 1 for Darken or 2 for Lighten: ";
+        cin >> choice;
+    }
+
     for (int i = 0; i < image.width; i++) {
         for (int j = 0; j < image.height; j++) {
             for (int c = 0; c < 3; c++) {
-               
-               int p = image.getPixel(i, j, c);
-               double t = level / 100.0;
-               double factor = pow(0.05, t);
-               int newValue = p * factor;
-               
-               if (newValue < 0) {
-                newValue = 0;
-               } 
-
-                image.getPixel(i, j, c) = newValue;
-            }
-        }
-    }
-}
-
-void lightenImage(Image& image, int level) {
-    for (int i = 0; i < image.width; i++) {
-        for (int j = 0; j < image.height; j++) {
-            for (int c = 0; c < 3; c++) {  
                 int p = image.getPixel(i, j, c);
-                int newValue = p *(1 + level / 100.0);
+                int newValue;
 
-                if (newValue > 255) {
-                    newValue = 255;
+                if (choice == 1) {
+                     double t = level / 100.0;
+                     double factor = pow(0.05, t);
+                     newValue = p * factor;
+
+                     if (newValue < 0) {
+                        newValue = 0;
+                     }
+                }
+
+                else if (choice == 2) {
+                    newValue = p * (1 + level / 100.0);
+
+                    if (newValue > 255) {
+                        newValue = 255;
+                    }
                 }
 
                 image.getPixel(i, j, c) = newValue;
@@ -44,20 +50,10 @@ void lightenImage(Image& image, int level) {
 int main () {
     string filename;
 
-    cout << "Enter the filename of the image; ";
+    cout << "Enter the filename of the image: ";
     cin >> filename;
 
     Image image(filename);
-
-    int choice;
-
-    cout << "Enter 1 for Darken or 2 for Lighten: ";
-    cin >> choice;
-
-    while (choice != 1 && choice != 2) {
-        cout << "Invalid choice. Enter 1 for Darken or 2 for Lighten: ";
-        cin >> choice;
-    }
 
     int level;
 
@@ -69,12 +65,7 @@ int main () {
         cin >> level;
     }
 
-    if (choice ==1) {
-        darkenImage(image, level);
-    }
-    else {
-        lightenImage(image, level);
-    }
+    Darken_Lighten(image, level);
 
     string outputFilename;
 
