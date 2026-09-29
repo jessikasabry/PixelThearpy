@@ -4,7 +4,48 @@ using namespace std;
 Image image;
 string ImageName;
 
+void Darken_Lighten(Image& image, int level) {
+    int choice;
 
+    cout << "Do you want to: \n";
+    cout << "1. Darken image\n";
+    cout << "2. Lighten image\n";
+    cin >> choice;
+
+    while (choice != 1 && choice != 2) {
+        cout << "Invalid choice. Please enter 1 for Darken or 2 for Lighten: ";
+        cin >> choice;
+    }
+
+    for (int i = 0; i < image.width; i++) {
+        for (int j = 0; j < image.height; j++) {
+            for (int c = 0; c < 3; c++) {
+                int p = image.getPixel(i, j, c);
+                int newValue;
+
+                if (choice == 1) {
+                     double t = level / 100.0;
+                     double factor = pow(0.05, t);
+                     newValue = p * factor;
+
+                     if (newValue < 0) {
+                        newValue = 0;
+                     }
+                }
+
+                else if (choice == 2) {
+                    newValue = p * (1 + level / 100.0);
+
+                    if (newValue > 255) {
+                        newValue = 255;
+                    }
+                }
+
+                image.getPixel(i, j, c) = newValue;
+            }
+        }
+    }
+}
 void invertImage(Image& image){
     for (int i = 0; i < image.width; i++) {
         for (int j = 0; j < image.height; j++) {
