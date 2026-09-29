@@ -4,6 +4,52 @@ using namespace std;
 Image image;
 string ImageName;
 
+
+void rotate(Image &image,int angle){
+    int OldWidth=image.width;
+    int OldHeight=image.height;
+     Image rotated;
+    if (angle==90){
+     rotated=Image(OldHeight,OldWidth);
+     for(int y=0;y<OldHeight;y++){
+        for(int x=0;x<OldWidth;x++){
+            for(int c=0;c<3;c++){
+                int newX=OldHeight-1-y;
+                int newY=x;
+                rotated.setPixel(newX,newY,c,image.getPixel(x,y,c));
+            }
+        }
+
+     }
+    }
+    if (angle==180){
+     rotated=Image(OldWidth,OldHeight);
+     for(int y=0;y<OldHeight;y++){
+        for(int x=0;x<OldWidth;x++){
+            for(int c=0;c<3;c++){
+                int newX=OldWidth-1-x;
+                int newY=OldHeight-1-y;
+                rotated.setPixel(newX,newY,c,image.getPixel(x,y,c));
+            }
+        }
+
+     }
+    }
+    if (angle==270){
+     rotated=Image(OldHeight,OldWidth);
+     for(int y=0;y<OldHeight;y++){
+        for(int x=0;x<OldWidth;x++){
+            for(int c=0;c<3;c++){
+                int newX=y;
+                int newY=OldWidth-1-x;
+                rotated.setPixel(newX,newY,c,image.getPixel(x,y,c));
+            }
+        }
+     }
+    }
+    image=rotated;
+};
+
 void resize(Image& image, int h,int w){
     int nh,nw;
     cout<<"ENter the new width and the new height of the image;\n";
