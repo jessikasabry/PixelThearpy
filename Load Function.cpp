@@ -10,6 +10,8 @@ string ImageName;
     if(!image.loadNewImage(ImageName))cout<<"Failed Image uploading";
     else cout<<"uploaded Successfully";
     };
+
+
     int main(){
         int choice;
         cout<<"Baby Photoshop Program\n";
