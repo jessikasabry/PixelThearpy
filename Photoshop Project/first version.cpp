@@ -349,15 +349,15 @@ cout<<"4.exist\n";
     else if(choice==2){int filterChoice;
 
     cout<<"\nchoose a filter \n";
-    cout<<"1.GrayScale\n";
+    cout<<"\n1.GrayScale\n";
     cout<<"2.BlackAndWhite\n";
     cout<<"3.Invert\n";
     cout<<"4.Frame\n";
     cout<<"5.Flip\n";
     cout<<"6.Rotate\n";
     cout<<"7.DarKen/Lighten\n";
-   cout<<"8.Resize";
-   cout<<"Choose a filter :" ;
+   cout<<"8.Resize\n";
+   cout<<"\nChoose a filter :" ;
 
 cin>> filterChoice;
 
