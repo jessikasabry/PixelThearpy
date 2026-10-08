@@ -32,7 +32,7 @@ int main(){
 
     Samurai(image,h,w);
 
-    cout << "Pls enter image name to store new image\n";
+    cout << "Pls enter image name to store new image\n ";
     cout << "and specify extension .jpg, .bmp, .png, .tga:\n ";
 
     cin >> fileName;
