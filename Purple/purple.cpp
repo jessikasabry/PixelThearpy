@@ -8,11 +8,11 @@ void purpleEffect(Image& image) {
         for(int j = 0; j < image.width; j++) {
             int red = image.getPixel(j, i, 0);
             int green = image.getPixel(j, i, 1);
-            int blue = image.getPixel(j, i, 2);
+            int blue = image.getPixel(j, i, 2);  
 
-            int newRed = red * 1.30;
-            int newGreen = green * 0.70;
-            int newBlue = blue * 1.30;
+            int newRed = red + 0.4 * blue;
+            int newGreen = green * 0.6;
+            int newBlue = blue + 0.15 * red;
 
             if (newRed > 255) newRed = 255;
             if (newGreen > 255) newGreen = 255;
@@ -24,9 +24,9 @@ void purpleEffect(Image& image) {
 
             int average = (newRed + newGreen + newBlue) /3;
 
-            newRed = average + (newRed - average) * 1.10;
-            newGreen = average + (newGreen - average) * 1.10;
-            newBlue = average + (newBlue - average) * 1.10;
+            newRed = average + (newRed - average) * 1.20;
+            newGreen = average + (newGreen - average) * 1.20;
+            newBlue = average + (newBlue - average) * 1.20;
 
             if (newRed > 255) newRed = 255;
             if (newGreen > 255) newGreen = 255;
