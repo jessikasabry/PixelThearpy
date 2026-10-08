@@ -7,7 +7,7 @@ void Samurai(Image & image,int h,int w){
 
 for(int i=0;i<w;i++){
     for(int j=0;j<h;j++){
-        int avg=(  image(i,j,0)+  image(i,j,0)+  image(i,j,0))/3;
+        int avg=(  image(i,j,0)+  image(i,j,1)+  image(i,j,2))/3;
         
 
             image(i,j,0)=255;
