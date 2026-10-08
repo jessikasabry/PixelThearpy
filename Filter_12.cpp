@@ -55,6 +55,7 @@ int main(){
    int w= image.width;
 
     blur(image,h,w);
+    //
 
     cout << "Pls enter image name to store new image\n";
     cout << "and specify extension .jpg, .bmp, .png, .tga:\n ";
