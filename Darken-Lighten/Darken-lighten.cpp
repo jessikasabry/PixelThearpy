@@ -24,9 +24,7 @@ void Darken_Lighten(Image& image, int level) {
                 int newValue;
 
                 if (choice == 1) {
-                     double t = level / 100.0;
-                     double factor = pow(0.05, t);
-                     newValue = p * factor;
+                     newValue = p * (1.0 - (level / 100.0));
 
                      if (newValue < 0) {
                         newValue = 0;
