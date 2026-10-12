@@ -4,7 +4,7 @@ CS213 - Assignment 1 (Baby Photoshop) - GUI version
 Faculty of Computing and AI, Cairo University
 Supervisor: Dr. Mohammad El-Ramly
 Section: S37, S38
-
+============================================================
 Team:
 - Joussyana 20250167
 - Jessika 20250171
