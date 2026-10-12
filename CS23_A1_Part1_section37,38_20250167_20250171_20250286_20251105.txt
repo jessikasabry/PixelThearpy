@@ -1,6 +1,6 @@
 /*===================================
  CS213 Object Oriented Programming
-Assignment 1 - Part 1
+Assignment 1 - Part 2
 
 Section: s37 ,S38
 
@@ -11,12 +11,11 @@ Team Members:
 4. Jana - ID: 20251105
 
 Work Breakdown:
-Joussyana: Filters 1, 5
-Jessika: Filters 2, 6
-Salma: Filters 3, 7
-Jana: Filters 4, 8
+Joussyana: Filters 1, 5,9,13+menu+GUI
+Jessika: Filters 2, 6,10,14+Load+ Filter 17
+Salma: Filters 3, 7,11,15+Save+Filter 18
+Jana: Filters 4, 8,12,16+integration
 
-Menu , load and save : team work
 
 =======================================================*/
 
