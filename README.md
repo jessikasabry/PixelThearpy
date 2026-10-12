@@ -1,3 +1,8 @@
+
+Baby Photoshop - CS213 Assignment 1 (Part 2) 
+
+
+
 ============================================================
 CS213 - Assignment 1 (Baby Photoshop) - GUI version
 Faculty of Computing and AI, Cairo University
